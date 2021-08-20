@@ -1,7 +1,7 @@
 import requests
 import json
 import os
- 
+
 '''
 Parameters:
 String paramter: base_jenkins_url
@@ -33,7 +33,7 @@ def check_previous_step_result(base_jenkins_url, name_of_the_job,
         for action in json.loads(jsonOutput)['actions']:
             if 'parameters' in action:
                 for parameter in  action['parameters']:
-                    print(parameter['name'], parameter['value']
+                    print(parameter["name"], " = ", parameter["value"])
                     if parameter['name'] == 'RELEASE_VERSION':
                         release_version = parameter['value']
         print(f"### ##The release version for the lasted build is {release_version}")
