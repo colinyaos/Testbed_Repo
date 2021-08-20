@@ -49,4 +49,4 @@ def check_previous_step_result(base_jenkins_url, name_of_the_job,
 
     # TODO: store the task result to database
 
-check_previous_step_result(base_jenkins_url, name_of_the_job, jenkins_api_token, username, expected_release_version)
+check_previous_step_result(base_jenkins_url, name_of_the_job, jenkins_api_token, username, expected_release_version, port_number)
