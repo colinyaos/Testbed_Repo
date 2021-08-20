@@ -29,6 +29,7 @@ def check_previous_step_result(base_jenkins_url, name_of_the_job,
     url = f"http://{base_jenkins_url}:{port_number}/job/{name_of_the_job}/lastBuild/api/json"
     try:
         jsonOutput = requests.get(url, auth=(username,jenkins_api_token)).text
+        print(jsonOutput)
         # get release version
         for action in json.loads(jsonOutput)['actions']:
             if 'parameters' in action:
